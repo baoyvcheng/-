@@ -4,7 +4,7 @@
 #include <vector>
 using namespace std;
 
-// ×î´ó×ÓÊı×éºÍ
+// æœ€å¤§å­æ•°ç»„å’Œ
 int max_subarray_sum(vector<int>& arr) {
     int n = arr.size();
     int max_sum = 0;
@@ -18,32 +18,32 @@ int max_subarray_sum(vector<int>& arr) {
     return max_sum;
 }
 
-// µ¥Ôª²âÊÔ
-// ´¦Àí max_subarray_sum º¯ÊıÖĞ¿ÕÊı×éµÄ²âÊÔÓÃÀı¡£
+// å•å…ƒæµ‹è¯•
+// å¤„ç† max_subarray_sum å‡½æ•°ä¸­ç©ºæ•°ç»„çš„æµ‹è¯•ç”¨ä¾‹ã€‚
 TEST(MaxSubArraySumTest, HandlesEmptyArray) {
     
     std::vector<int> nums = {};
     EXPECT_EQ(max_subarray_sum(nums), 0);
 }
-// ´¦ÀíËùÓĞ¸ºÊıµÄ²âÊÔÓÃÀı¡£
+// å¤„ç†æ‰€æœ‰è´Ÿæ•°çš„æµ‹è¯•ç”¨ä¾‹ã€‚
 TEST(MaxSubArraySumTest, HandlesAllNegativeNumbers) {
     
     std::vector<int> nums = { -1, -2, -3, -4 };
     EXPECT_EQ(max_subarray_sum(nums), 0);
 }
-// ´¦Àí»ìºÏÕı¸ºÊıµÄ²âÊÔÓÃÀı¡£
+// å¤„ç†æ··åˆæ­£è´Ÿæ•°çš„æµ‹è¯•ç”¨ä¾‹ã€‚
 TEST(MaxSubArraySumTest, HandlesMixedPositiveAndNegativeNumbers) {
     
     std::vector<int> nums = { -2, 11, -4, 13, -5, -2 };
     EXPECT_EQ(max_subarray_sum(nums), 20);
 }
-// ´¦ÀíËùÓĞÕıÊıµÄ²âÊÔÓÃÀı¡£
+// å¤„ç†æ‰€æœ‰æ­£æ•°çš„æµ‹è¯•ç”¨ä¾‹ã€‚
 TEST(MaxSubArraySumTest, HandlesAllPositiveNumbers) {
    
     std::vector<int> nums = { 1, 2, 3, 4 };
     EXPECT_EQ(max_subarray_sum(nums), 10);
 }
-// ´¦Àíµ¥¸öÔªËØµÄ²âÊÔÓÃÀı¡£
+// å¤„ç†å•ä¸ªå…ƒç´ çš„æµ‹è¯•ç”¨ä¾‹ã€‚
 TEST(MaxSubArraySumTest, HandlesSingleElementArray) {
     
     std::vector<int> nums = { -5 };
@@ -53,13 +53,13 @@ TEST(MaxSubArraySumTest, HandlesSingleElementArray) {
     nums = { 5 };
     EXPECT_EQ(max_subarray_sum(nums), 5);
 }
-// ´¦Àíµ¥¸öÁãÔªËØµÄ²âÊÔÓÃÀı¡£
+// å¤„ç†å•ä¸ªé›¶å…ƒç´ çš„æµ‹è¯•ç”¨ä¾‹ã€‚
 TEST(MaxSubArraySumTest, HandlesSingleZeroElementArray) {
     
     std::vector<int> nums = { 0 };
     EXPECT_EQ(max_subarray_sum(nums), 0);
 }
-// ´¦ÀíËùÓĞÁãÔªËØµÄ²âÊÔÓÃÀı¡£
+// å¤„ç†æ‰€æœ‰é›¶å…ƒç´ çš„æµ‹è¯•ç”¨ä¾‹ã€‚
 TEST(MaxSubArraySumTest, HandlesAllZerosArray) {
     
     std::vector<int> nums = { 0, 0, 0, 0 };
@@ -67,7 +67,7 @@ TEST(MaxSubArraySumTest, HandlesAllZerosArray) {
 }
 
 
-//Google TestÖ÷³ÌĞò
+//Google Testä¸»ç¨‹åº
 int main(int argc, char** argv) {
     ::testing::InitGoogleTest(&argc, argv);
     return RUN_ALL_TESTS();
