@@ -48,10 +48,10 @@ int main() {
             saveToFile(students);
             break;
         case '6':
-            cout << "ÍË³ö³ÌĞò¡£" << endl;
+            cout << "é€€å‡ºç¨‹åºã€‚" << endl;
             break;
         default:
-            cout << "ÎŞĞ§µÄÑ¡Ôñ£¬ÇëÖØĞÂÊäÈë¡£" << endl;
+            cout << "æ— æ•ˆçš„é€‰æ‹©ï¼Œè¯·é‡æ–°è¾“å…¥ã€‚" << endl;
             break;
         }
     } while (choice != '6');
@@ -60,92 +60,92 @@ int main() {
 }
 
 void displayMenu() {
-    cout << "\n===== Ñ§Éú¹ÜÀíÏµÍ³ =====" << endl;
-    cout << "1. Ìí¼ÓÑ§ÉúĞÅÏ¢" << endl;
-    cout << "2. ²éÕÒÑ§ÉúĞÅÏ¢" << endl;
-    cout << "3. ĞŞ¸ÄÑ§ÉúĞÅÏ¢" << endl;
-    cout << "4. É¾³ıÑ§ÉúĞÅÏ¢" << endl;
-    cout << "5. ±£´æµ½ÎÄ¼ş" << endl;
-    cout << "6. ÍË³ö" << endl;
-    cout << "ÇëÊäÈëÑ¡Ïî£º";
+    cout << "\n===== å­¦ç”Ÿç®¡ç†ç³»ç»Ÿ =====" << endl;
+    cout << "1. æ·»åŠ å­¦ç”Ÿä¿¡æ¯" << endl;
+    cout << "2. æŸ¥æ‰¾å­¦ç”Ÿä¿¡æ¯" << endl;
+    cout << "3. ä¿®æ”¹å­¦ç”Ÿä¿¡æ¯" << endl;
+    cout << "4. åˆ é™¤å­¦ç”Ÿä¿¡æ¯" << endl;
+    cout << "5. ä¿å­˜åˆ°æ–‡ä»¶" << endl;
+    cout << "6. é€€å‡º" << endl;
+    cout << "è¯·è¾“å…¥é€‰é¡¹ï¼š";
 }
 
 void addStudent(vector<Student>& students) {
     Student newStudent;
-    cout << "\nÌí¼ÓÑ§ÉúĞÅÏ¢£º" << endl;
-    cout << "ĞÕÃû£º";
+    cout << "\næ·»åŠ å­¦ç”Ÿä¿¡æ¯ï¼š" << endl;
+    cout << "å§“åï¼š";
     getline(cin, newStudent.name);
-    cout << "Ñ§ºÅ£º";
+    cout << "å­¦å·ï¼š";
     cin >> newStudent.id;
-    cout << "GPA£º";
+    cout << "GPAï¼š";
     cin >> newStudent.gpa;
     students.push_back(newStudent);
-    cout << "Ñ§ÉúĞÅÏ¢ÒÑÌí¼Ó¡£" << endl;
+    cout << "å­¦ç”Ÿä¿¡æ¯å·²æ·»åŠ ã€‚" << endl;
 }
 
 void findStudent(const vector<Student>& students) {
     int id;
-    cout << "\n²éÕÒÑ§ÉúĞÅÏ¢£º" << endl;
-    cout << "ÇëÊäÈëÑ§ºÅ£º";
+    cout << "\næŸ¥æ‰¾å­¦ç”Ÿä¿¡æ¯ï¼š" << endl;
+    cout << "è¯·è¾“å…¥å­¦å·ï¼š";
     cin >> id;
 
     bool found = false;
     for (const auto& student : students) {
         if (student.id == id) {
-            cout << "ĞÕÃû£º" << student.name << endl;
-            cout << "Ñ§ºÅ£º" << student.id << endl;
-            cout << "GPA£º" << student.gpa << endl;
+            cout << "å§“åï¼š" << student.name << endl;
+            cout << "å­¦å·ï¼š" << student.id << endl;
+            cout << "GPAï¼š" << student.gpa << endl;
             found = true;
             break;
         }
     }
 
     if (!found) {
-        cout << "Î´ÕÒµ½¸ÃÑ§Éú¡£" << endl;
+        cout << "æœªæ‰¾åˆ°è¯¥å­¦ç”Ÿã€‚" << endl;
     }
 }
 
 void updateStudent(vector<Student>& students) {
     int id;
-    cout << "\nĞŞ¸ÄÑ§ÉúĞÅÏ¢£º" << endl;
-    cout << "ÇëÊäÈëÒªĞŞ¸ÄĞÅÏ¢µÄÑ§ÉúÑ§ºÅ£º";
+    cout << "\nä¿®æ”¹å­¦ç”Ÿä¿¡æ¯ï¼š" << endl;
+    cout << "è¯·è¾“å…¥è¦ä¿®æ”¹ä¿¡æ¯çš„å­¦ç”Ÿå­¦å·ï¼š";
     cin >> id;
 
     bool found = false;
     for (auto& student : students) {
         if (student.id == id) {
-            cout << "ÇëÊäÈëĞÂµÄĞÕÃû£º";
+            cout << "è¯·è¾“å…¥æ–°çš„å§“åï¼š";
             getline(cin, student.name);
-            cout << "ÇëÊäÈëĞÂµÄÑ§ºÅ£º";
+            cout << "è¯·è¾“å…¥æ–°çš„å­¦å·ï¼š";
             cin >> student.id;
-            cout << "ÇëÊäÈëĞÂµÄGPA£º";
+            cout << "è¯·è¾“å…¥æ–°çš„GPAï¼š";
             cin >> student.gpa;
-            cout << "Ñ§ÉúĞÅÏ¢ÒÑ¸üĞÂ¡£" << endl;
+            cout << "å­¦ç”Ÿä¿¡æ¯å·²æ›´æ–°ã€‚" << endl;
             found = true;
             break;
         }
     }
 
     if (!found) {
-        cout << "Î´ÕÒµ½¸ÃÑ§Éú¡£" << endl;
+        cout << "æœªæ‰¾åˆ°è¯¥å­¦ç”Ÿã€‚" << endl;
     }
 }
 
 void deleteStudent(vector<Student>& students) {
     int id;
-    cout << "\nÉ¾³ıÑ§ÉúĞÅÏ¢£º" << endl;
-    cout << "ÇëÊäÈëÒªÉ¾³ıĞÅÏ¢µÄÑ§ÉúÑ§ºÅ£º";
+    cout << "\nåˆ é™¤å­¦ç”Ÿä¿¡æ¯ï¼š" << endl;
+    cout << "è¯·è¾“å…¥è¦åˆ é™¤ä¿¡æ¯çš„å­¦ç”Ÿå­¦å·ï¼š";
     cin >> id;
 
     for (auto it = students.begin(); it != students.end(); ++it) {
         if (it->id == id) {
             it = students.erase(it);
-            cout << "Ñ§ÉúĞÅÏ¢ÒÑÉ¾³ı¡£" << endl;
+            cout << "å­¦ç”Ÿä¿¡æ¯å·²åˆ é™¤ã€‚" << endl;
             return;
         }
     }
 
-    cout << "Î´ÕÒµ½¸ÃÑ§Éú¡£" << endl;
+    cout << "æœªæ‰¾åˆ°è¯¥å­¦ç”Ÿã€‚" << endl;
 }
 
 void saveToFile(const vector<Student>& students) {
@@ -155,10 +155,10 @@ void saveToFile(const vector<Student>& students) {
             outFile << student.name << ',' << student.id << ',' << student.gpa << endl;
         }
         outFile.close();
-        cout << "Ñ§ÉúĞÅÏ¢ÒÑ±£´æµ½ÎÄ¼ş¡£" << endl;
+        cout << "å­¦ç”Ÿä¿¡æ¯å·²ä¿å­˜åˆ°æ–‡ä»¶ã€‚" << endl;
     }
     else {
-        cout << "ÎŞ·¨´ò¿ªÎÄ¼ş½øĞĞ±£´æ¡£" << endl;
+        cout << "æ— æ³•æ‰“å¼€æ–‡ä»¶è¿›è¡Œä¿å­˜ã€‚" << endl;
     }
 }
 
@@ -175,9 +175,9 @@ void loadFromFile(vector<Student>& students) {
             students.push_back(newStudent);
         }
         inFile.close();
-        cout << "Ñ§ÉúĞÅÏ¢ÒÑ´ÓÎÄ¼ş¼ÓÔØ¡£" << endl;
+        cout << "å­¦ç”Ÿä¿¡æ¯å·²ä»æ–‡ä»¶åŠ è½½ã€‚" << endl;
     }
     else {
-        cout << "ÎŞ·¨´ò¿ªÎÄ¼ş½øĞĞ¼ÓÔØ¡£" << endl;
+        cout << "æ— æ³•æ‰“å¼€æ–‡ä»¶è¿›è¡ŒåŠ è½½ã€‚" << endl;
     }
 }
